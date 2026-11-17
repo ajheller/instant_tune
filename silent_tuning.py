@@ -13,10 +13,13 @@ import skrf as rf
 from matplotlib import pyplot as plt
 
 # %%
-project_files = Path("/Users/heller/dev/instant_tune/")
-tuner_files = project_files / "data" / "tuners" / "zmatch"
-antenna_files = project_files / "data" / "antennas"
-calib_files = project_files / "vna_calib"
+_here = Path(__file__).parent
+data_files = _here / "data"
+
+# project_files = Path("/Users/heller/dev/instant_tune/")
+tuner_files = data_files / "tuners" / "zmatch"
+antenna_files = data_files / "antennas"
+calib_files = data_files / "vna_calibration"
 
 # %%
 # load the antenna
