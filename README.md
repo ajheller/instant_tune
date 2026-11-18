@@ -19,14 +19,32 @@ With the environment activated:
 
 ```sh
 python silent_tuning.py
-# Or open the notebooks:
+```
+
+To run `silent_tuning.ipynb` in VS Code, select `.venv/bin/python` as the
+notebook kernel. JupyterLab is optional and is not included in `requirements.txt`.
+For a browser-based notebook interface, install and launch it separately:
+
+```sh
+python -m pip install jupyterlab
 python -m jupyterlab
 ```
 
-In an editor, select `.venv/bin/python` as the notebook kernel/interpreter.
-Launch Jupyter from the repository root so relative data paths resolve correctly.
-The scripts require local Touchstone measurements under `data/`, which are
-currently not tracked in Git. The NanoVNA experiment notebooks also require
-connected hardware and the correct serial device path.
+Run the notebook with the repository root as its working directory so relative
+data paths resolve correctly.
+
+## Measurement data
+
+All Touchstone measurements required by `silent_tuning.py` and
+`silent_tuning.ipynb` are checked into the repository under `data/`:
+
+- `antennas/Mosley-TA-33-W6SRI.s1p`: antenna measurement.
+- `tuners/zmatch/`: 50 forward/reverse sweeps for the 25 tuner settings.
+- `vna_calibrations/cal-1-30MHz-505pts.s2p`: calibration measurement loaded by
+  the notebook.
+
+These analyses use saved measurements and do not require connected hardware.
+The local NanoVNA experiment notebooks are not tracked in Git; running them
+requires connected hardware and the correct serial device path.
 
 Leave the environment with `deactivate`.
