@@ -13,7 +13,7 @@ import skrf as rf
 from matplotlib import pyplot as plt
 
 # %%
-_here = Path(__file__).parent
+_here = Path(__file__).resolve().parent
 data_files = _here / "data"
 
 # project_files = Path("/Users/heller/dev/instant_tune/")
